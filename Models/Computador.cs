@@ -9,6 +9,7 @@
 
 namespace ComputadoresITM.Models
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     
@@ -27,9 +28,10 @@ namespace ComputadoresITM.Models
         public int TamanoDiscoDuro { get; set; }
         public int TamanoMemoria { get; set; }
         public string Componentes { get; set; }
-    
+        [JsonIgnore]
         public virtual TipoComputador TipoComputador { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [JsonIgnore]
         public virtual ICollection<Venta> Ventas { get; set; }
     }
 }

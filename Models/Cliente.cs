@@ -9,6 +9,7 @@
 
 namespace ComputadoresITM.Models
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     
@@ -25,7 +26,8 @@ namespace ComputadoresITM.Models
         public string Apellido { get; set; }
         public string CorreoElectronico { get; set; }
         public string Telefono { get; set; }
-    
+        [JsonIgnore]
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Venta> Ventas { get; set; }
     }

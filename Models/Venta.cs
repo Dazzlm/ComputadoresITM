@@ -9,6 +9,7 @@
 
 namespace ComputadoresITM.Models
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     
@@ -20,9 +21,11 @@ namespace ComputadoresITM.Models
         public int AgenciaID { get; set; }
         public Nullable<System.DateTime> FechaVenta { get; set; }
         public decimal Precio { get; set; }
-    
+        [JsonIgnore]
         public virtual Agencia Agencia { get; set; }
+        [JsonIgnore]
         public virtual Cliente Cliente { get; set; }
+        [JsonIgnore]
         public virtual Computador Computador { get; set; }
     }
 }

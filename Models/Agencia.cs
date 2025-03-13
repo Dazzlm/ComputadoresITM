@@ -9,6 +9,7 @@
 
 namespace ComputadoresITM.Models
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     
@@ -23,7 +24,7 @@ namespace ComputadoresITM.Models
         public int AgenciaID { get; set; }
         public string Nombre { get; set; }
         public string Ciudad { get; set; }
-    
+        [JsonIgnore]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Venta> Ventas { get; set; }
     }
